@@ -4,6 +4,7 @@
     --secondary-color: #FCFAE1;
     --tertiary-color: #b2cb35;
 }
+
 .nav{
     background-color: #28351B;
 }
@@ -23,4 +24,23 @@
 .hero-container{
     background-color: #ffffff;
     color: var(--primary-color);
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.card {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 18rem;
+    margin: 1rem;
+}
+.card:hover{
+    background-color: #b2cb35;
+    color: #28351B;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
