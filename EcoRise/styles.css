@@ -123,3 +123,31 @@ img{
 .overlay-text {
     font-size: 1.5rem;
 }
+
+.svg-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.svg-overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 1rem;
+}
+.hero {
+    position: relative;
+}
+
+.hero-bottom-text {
+    bottom: 15%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
