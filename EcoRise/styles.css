@@ -2,16 +2,50 @@
     --primary-color: #28351B;
     --secondary-color: #FCFAE1;
     --tertiary-color: #b2cb35;
+    --hover-color: #b2b2b2; /* New green background for hover */
+    --dark-green: #2835; /* Dark green font color */
 }
 
-.nav{
-    background-color: #28351B;
+body{
+    background: #FCFAE1;
 }
-.nav-link:hover {
-    background-color: #b2cb35;
-    color: #28351B;
+
+.navbar-custom {
+    background-color: var(--primary-color); /* Green background */
+    color: var(--secondary-color); /* Tan font color */
+}
+.nav-link, a{
+    color: #b2cb35;
+}
+
+.navbar-custom .nav-link {
+    color: var(--secondary-color); /* Tan font color */
+}
+
+.navbar-custom .nav-link:hover {
+    background-color: var(--hover-color); /* New green background */
+    color: var(--dark-green); /* Dark green font color */
     font-weight: bold;
 }
+
+.navbar-custom .navbar-nav .nav-link {
+    color: var(--secondary-color); /* Tan font color */
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+    background-color: var(--tertiary-color); /* New green background */
+    color: var(--primary-color); /* Dargreen font color */
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border-color: var(--secondary-color); /* Tan border color */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28252, 250, 225, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Tan icon color */
+}
+
 .btn {
     background-color: #b2cb35;
     color: #28351B;
@@ -53,12 +87,14 @@ img{
     max-width: 100%;
     height: auto;
 }
-.card {
+.card, .card-fluid {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     width: 18rem;
-    height: 35rem;
+    height: auto;
     margin: 1rem;
+    margin-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .row{
@@ -150,4 +186,41 @@ img{
     color: white;
     text-align: center;
     font-weight: bolder;
+}
+.custom-bg-color{
+    background-color: #28351B;
+    width: 100%;
+}
+.grn-font{
+    color: #b2cb35;
+    font-weight: bold;
+}
+.grn-p{
+    color: #FCFAE1;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.cream-font{
+    color:#FCFAE1;
+}
+.custom_h1{
+    margin-top: 5%;
+    padding-top: 5%;
+}
+.radius{
+    border: 1px solid #b2cb35;
+    border-radius: 1rem;
+}
+.bg-opacity{
+    opacity: 50%;
+}
+.sunset-img{
+    margin-left: 8%;
+    margin-right: 10%;
+}
+.cream-bg{
+    background-color: #FCFAE1;
+}
+.drkgrnft{
+    color: #28351B;
 }
