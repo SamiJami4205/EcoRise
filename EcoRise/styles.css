@@ -117,6 +117,10 @@ img{
     text-align: center;
     padding: 1rem;
 }
+.sm-logo{
+    width: 32px;
+    height: 32px;
+}
 #logo {
     width: 150px; 
     height: 150px;
@@ -223,4 +227,12 @@ img{
 }
 .drkgrnft{
     color: #28351B;
+}
+.grn-bg{
+    background-color: #b2cb35;
+}
+.footer-bg{
+    background-color: #28351B;
+}
+.event-img{
 }

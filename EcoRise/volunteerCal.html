@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>EcoRise - Volunteer Opportunities</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!--Created With Chat Gpt & severe editing also confusing -->
+  <style>
+    :root {
+      --dark-green: #28351b;
+      --cream-bg: #Fcfae1;
+      --cream-card: #Fcfae1;
+      --accent-green: #b2cb35;
+      --text-dark: #28351b;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--cream-bg);
+      color: var(--text-dark);
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Amatic SC', cursive;
+    }
+    /* Calendar styles */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table th, table td {
+      border: 1px solid var(--accent-green);
+      width: 14.28%;
+      height: 80px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .event-day {
+      background-color: rgba(80, 87, 62, 0.2);
+      font-weight: bold;
+      color: var(--dark-green);
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- HEADER / NAVBAR -->
+  <nav class="navbar navbar-expand-md navbar-custom" >
+    <div class="container">
+      <a class="navbar-brand text-white d-flex align-items-center" href="#">
+        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 sm-logo">
+          <span>🌱</span>
+        </div>
+        <span class="fs-3 fw-bold grn-font">EcoRise</span>
+      </a>
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 ms-4">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Donations</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Sustainable Scoop</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Resources</a></li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-light me-2" type="button">Sign Up</button>
+          <button class="btn btn-light me-2" type="button" >Log In</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-fill">
+    <div class="container py-4">
+      <h1 class="text-center display-4 mb-4">Volunteer Opportunities</h1>
+      <!-- Search Filter Row -->
+      <div class="row g-2 mb-4">
+        <div class="col-sm">
+          <input type="text" class="form-control" placeholder="City">
+        </div>
+        <div class="col-sm">
+          <input type="text" class="form-control" placeholder="State">
+        </div>
+        <div class="col-sm">
+          <input type="text" class="form-control" placeholder="Zip Code">
+        </div>
+        <div class="col-sm">
+          <input type="text" class="form-control" placeholder="Distance">
+        </div>
+        <div class="col-sm-auto">
+          <button class="grnBtn  " type="button">Search</button>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Left Filters Column -->
+        <aside class="col-md-3 d-none d-md-block">
+          <button class="btn w-100 mb-3 grnBtn" type="button" >Filter</button>
+          <ul class="list-unstyled">
+            <li class="mb-2"><input type="checkbox" id="cleanup" class="me-1"><label for="cleanup">Community Cleanups</label></li>
+            <li class="mb-2"><input type="checkbox" id="trees" class="me-1"><label for="trees">Tree Planting</label></li>
+            <li class="mb-2"><input type="checkbox" id="gardens" class="me-1"><label for="gardens">Community Gardens</label></li>
+            <li class="mb-2"><input type="checkbox" id="wildlife" class="me-1"><label for="wildlife">Wildlife Conservation</label></li>
+            <li class="mb-2"><input type="checkbox" id="advocacy" class="me-1"><label for="advocacy">Environmental Advocacy</label></li>
+            <li class="mb-2"><input type="checkbox" id="recycling" class="me-1"><label for="recycling">Recycling Programs</label></li>
+            <li class="mb-2"><input type="checkbox" id="construction" class="me-1"><label for="construction">Eco-Friendly Construction</label></li>
+            <li class="mb-2"><input type="checkbox" id="farming" class="me-1"><label for="farming">Sustainable Farming</label></li>
+          </ul>
+        </aside>
+        <!-- Right Calendar Column -->
+        <section class="col-md-9">
+        <!-- Tabs -->
+          <ul class="nav nav-pills mb-3">
+            <li class="nav-item">
+              <button class="nav-link grnBtn" aria-current="page" type="button">Month</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link grnBtn ms-1" type="button">Week</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link grnBtn ms-1" type="button">Day</button>
+            </li>
+          </ul>
+          <!-- Calendar Header -->
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <button id="prevMonth" class="btn btn-link text-decoration-none" type="button">&lt;</button>
+            <h2 id="calendarTitle" class="h1 mb-0">March 2025</h2>
+            <button id="nextMonth" class="btn btn-link text-decoration-none" type="button">&gt;</button>
+          </div>
+          <!-- Calendar Table -->
+          <table class="table table-bordered text-center">
+            <thead class="text-white">
+                <tr>
+                <th scope="col">Sun</th>
+                <th scope="col">Mon</th>
+                <th scope="col">Tue</th>
+                <th scope="col">Wed</th>
+                <th scope="col">Thu</th>
+                <th scope="col">Fri</th>
+                <th scope="col">Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-muted">2</td>
+                    <td class="text-muted">3</td>
+                    <td class="text-muted">4</td>
+                    <td class="text-muted">5</td>
+                    <td class="text-muted">6</td>
+                    <td class="text-muted">7</td>
+                    <td class="text-muted">8</td>
+                </tr>
+                <tr>
+                    <td class="event-day">9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td class="event-day">12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td class="event-day">21</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td class="event-day">28</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>31</td>
+                <td class="text-muted">1</td>
+                <td class="text-muted">2</td>
+                <td class="text-muted">3</td>
+                <td class="text-muted">4</td>
+                <td class="text-muted">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+      <!-- Events In Your Area -->
+    <section class="container py-4">
+        <h2 class="display-5 mb-4">Events In Your Area</h2>
+        <!-- Event 1 -->
+        <div class="mb-4 d-flex flex-row">
+            <div class="row ">
+                <div class="col-md-6">
+                    <img src="images/environmental-8029976_1280.jpg" class="img-thumbnail img-fluid rounded me-3" alt="Tree Planting Event">
+                </div>
+                <div class="col-md-4 m-3 d-flex">
+                    <div class="card-body ">
+                        <h3 class="card-title">Tree Planting Event</h3>
+                        <p class="card-text"><strong>Location:</strong> Greenfield Park, Greenville, South Carolina</p>
+                        <p class="card-text"><strong>Date And Time:</strong> March 12, From 9:00 AM To 1:00 PM</p>
+                        <a href="#" class="btn text-center" >Volunteer!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Event 2 -->
+        <div class=" mb-4 d-flex flex-row">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="images/pollution-4855506_1280.jpg" class="img-fluid rounded-start img-thumbnail" alt="Community Clean-Up">
+            </div>
+            <div class="col-md-4 m-3 d-flex">
+              <div class="card-body">
+                <h3 class="card-title">Community Clean-Up</h3>
+                <p class="card-text"><strong>Location:</strong> Riverside Neighborhood, Portland, Oregon</p>
+                <p class="card-text"><strong>Date And Time:</strong> March 19, From 10:00 AM To 2:00 PM</p>
+                <a href="#" class="btn" >Volunteer!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Event 3 -->
+        <div class="mb-4 d-flex flex-row    " >
+          <div class="row">
+            <div class="col-md-6">
+            <img src="images/ecology-4699486_1280.jpg" class="img-fluid rounded img-thumbnail" alt="Community Garden Project">
+            </div>
+            <div class="col-md-4 m-3 d-flex">
+              <div class="card-body">
+                <h3 class="card-title">Community Garden Project</h3>
+                <p class="card-text"><strong>Location:</strong> Sunshine Community Garden, Austin, Texas</p>
+                <p class="card-text"><strong>Date And Time:</strong> March 26, From 8:00 AM To 12:00 PM</p>
+                <a href="#" class="btn" >Volunteer!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="mt-auto footer-bg" >
+      <div class="container py-4">
+        <div class="row">
+          <!-- Essentials -->
+          <div class="col-md-4 mb-3">
+            <h4 class="text-white">Essentials</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+              <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Donate</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Newsletter</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Terms Of Service</a></li>
+            </ul>
+          </div>
+          <!-- Informational -->
+          <div class="col-md-4 mb-3">
+            <h4 class="text-white">Informational</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white text-decoration-none">Our Mission</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Resources</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Blog/News</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Events</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Volunteer Opportunities</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Projects And Initiatives</a></li>
+            </ul>
+          </div>
+          <!-- Additional -->
+          <div class="col-md-4">
+            <h4 class="text-white">Additional</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white text-decoration-none">Careers</a></li>
+              <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Minimal JavaScript for future dynamic calendar functionality -->
+    <script>
+      // Future enhancements: dynamic calendar generation and event highlighting.
+    </script>
+  </body>
+  </html>
